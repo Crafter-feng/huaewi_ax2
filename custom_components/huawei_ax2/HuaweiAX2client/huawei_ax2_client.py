@@ -10,7 +10,7 @@ from . import crypto
 _LOGGER = logging.getLogger(__name__)
 
 
-class HonorX3Client:
+class HuaweiAX2Client:
     def __init__(self, host, username, password):
         """Initialize the client."""
         self.statusmsg = None
@@ -31,7 +31,7 @@ class HonorX3Client:
         try:
             data = {
                 'csrf': {'csrf_param': self.login_data['csrf_param'], 'csrf_token': self.login_data['csrf_token']}}
-            r = self.session.post('https://{0}/api/service/reboot.cgi'.format(self.host),
+            r = self.session.post('http://{0}/api/service/reboot.cgi'.format(self.host),
                                   data=json.dumps(data, separators=(',', ':')))
             data = json.loads(re.search('({.*?})', r.text).group(1))
             assert data['errcode'] == 0, data
@@ -55,7 +55,7 @@ class HonorX3Client:
 
         try:
             self.session = session()
-            r = self.session.get('https://{0}/api/system/deviceinfo'.format(self.host), verify=False)
+            r = self.session.get('http://{0}/api/system/deviceinfo'.format(self.host), verify=False)
             self.status = 'on'
             device_info = r.json()
 
@@ -74,7 +74,7 @@ class HonorX3Client:
             data = {'csrf': {'csrf_param': device_info['csrf_param'],
                              'csrf_token': device_info['csrf_token']},
                     'data': {'username': self.username, 'firstnonce': firstnonce}}
-            r = self.session.post('https://{0}/api/system/user_login_nonce'.format(self.host),
+            r = self.session.post('http://{0}/api/system/user_login_nonce'.format(self.host),
                                   data=json.dumps(data, separators=(',', ':')), verify=False)
             responsenonce = r.json()
             salt = responsenonce['salt']
@@ -88,7 +88,7 @@ class HonorX3Client:
                     'data': {'clientproof': client_proof,
                              'finalnonce': servernonce}
                     }
-            r = self.session.post('https://{0}/api/system/user_login_proof'.format(self.host),
+            r = self.session.post('http://{0}/api/system/user_login_proof'.format(self.host),
                                   data=json.dumps(data, separators=(',', ':')), verify=False)
             loginproof = r.json()
 
@@ -114,7 +114,7 @@ class HonorX3Client:
                 'csrf_token': self.login_data['csrf_token']
             }
             }
-            r = self.session.post('https://{0}/api/system/user_logout'.format(
+            r = self.session.post('http://{0}/api/system/user_logout'.format(
                 self.host), data=json.dumps(data, separators=(',', ':')), verify=False)
             data = r.json()
             assert r.ok, r
@@ -129,7 +129,7 @@ class HonorX3Client:
         """Get the raw string with the devices from the router."""
         # GET DEVICES RESPONSE
         try:
-            query = 'https://{0}/api/system/HostInfo'.format(self.host)
+            query = 'http://{0}/api/system/HostInfo'.format(self.host)
             r = self.session.get(query, verify=False)
             devices = r.json()
             self.statusmsg = 'OK'

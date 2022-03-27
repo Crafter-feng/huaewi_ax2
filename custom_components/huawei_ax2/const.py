@@ -1,10 +1,10 @@
-"""Constants for honor_x3."""
+"""Constants for huawei_ax2."""
 # Base component constants
-DOMAIN = "honor_x3"
+DOMAIN = "huawei_ax2"
 DOMAIN_DATA = "{}_data".format(DOMAIN)
 VERSION = "0.4.1"
 PLATFORMS = ["sensor"]
-ISSUE_URL = "https://github.com/juacas/honor_x3/issues"
+ISSUE_URL = "https://github.com/juacas/huawei_ax2/issues"
 
 STARTUP = """
 -------------------------------------------------------------------

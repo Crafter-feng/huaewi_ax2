@@ -1,14 +1,14 @@
 import os
 from unittest import TestCase
 
-from honorx3client.honor_x3_client import HonorX3Client
+from HuaweiAX2client.huawei_ax2_client import HuaweiAX2Client
 
 
-class TestHonorX3Client(TestCase):
+class TestHuaweiAX2Client(TestCase):
     def setUp(self) -> None:
         self.password = os.environ.get('TEST_PASSWORD', '!secret')
         self.host = os.environ.get('TEST_HOST', '192.168.3.1')
-        self.client = HonorX3Client(self.host, 'admin', self.password)
+        self.client = HuaweiAX2Client(self.host, 'admin', self.password)
 
     # def test_reboot(self):
     #    self.fail()

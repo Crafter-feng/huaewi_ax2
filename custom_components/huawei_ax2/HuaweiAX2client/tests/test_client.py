@@ -1,14 +1,14 @@
 import unittest
 import os
-from honorx3client.honor_x3_client import HonorX3Client
+from HuaweiAX2client.huawei_ax2_client import HuaweiAX2Client
 
 #import ...
 
-#class HonorX3ClientTest(unittest.TestCase):
+#class HuaweiAX2ClientTest(unittest.TestCase):
 password = os.environ.get('TEST_PASSWORD', '!secret')
 host = os.environ.get('TEST_HOST', 'xx192.168.3.1')
 
-client = HonorX3Client(host, 'admin', password)
+client = HuaweiAX2Client(host, 'admin', password)
 res = client.login()
 if res:
     devices = client.get_devices_response()

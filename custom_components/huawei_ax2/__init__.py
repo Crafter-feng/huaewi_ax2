@@ -6,7 +6,7 @@ import homeassistant.helpers.config_validation as cv
 import voluptuous as vol
 from homeassistant.const import CONF_HOST, CONF_PASSWORD, CONF_USERNAME
 from homeassistant.helpers import discovery
-from .honorx3client.honor_x3_client import HonorX3Client
+from .HuaweiAX2client.huawei_ax2_client import HuaweiAX2Client
 from .const import DOMAIN
 
 CONFIG_SCHEMA = vol.Schema({
@@ -28,7 +28,7 @@ def setup(hass, config):
     _LOGGER.debug("Client initialized with {0}:{1}@{2}".format(
         plattform_conf[CONF_USERNAME], plattform_conf[CONF_PASSWORD], plattform_conf[CONF_HOST]))
 
-    client = HonorX3Client(plattform_conf[CONF_HOST],
+    client = HuaweiAX2Client(plattform_conf[CONF_HOST],
                            plattform_conf[CONF_USERNAME],
                            plattform_conf[CONF_PASSWORD])
     # Create DATA dict

@@ -11,7 +11,7 @@ from homeassistant.components.device_tracker import (
 from homeassistant.const import CONF_HOST, CONF_PASSWORD, CONF_USERNAME
 import homeassistant.helpers.config_validation as cv
 from homeassistant.helpers import config_validation as cv, entity_platform, service
-from .honorx3client.honor_x3_client import HonorX3Client
+from .HuaweiAX2client.huawei_ax2_client import HuaweiAX2Client
 
 _LOGGER = logging.getLogger(__name__)
 
@@ -20,19 +20,19 @@ def get_scanner(hass, config):
     """Validate the configuration and return a HUAWEI scanner."""
     shared_data = hass.data[DOMAIN]
     client = shared_data.get('client')
-    scanner = HonorX3DeviceScanner(hass, client)
+    scanner = HuaweiAX2DeviceScanner(hass, client)
     return scanner
 
 
 Device = namedtuple("Device", ["name", "ip", "mac", "state", "icon"])
 
 
-class HonorX3DeviceScanner(DeviceScanner):
+class HuaweiAX2DeviceScanner(DeviceScanner):
     """This class queries a router running HUAWEI HG659 firmware."""
 
     def __init__(self, hass, cli):
         """Initialize the scanner.
-        :type cli: HonorX3Client
+        :type cli: HuaweiAX2Client
         """
         _LOGGER.info("===========================")
         _LOGGER.info(" Honor X3 start device Scanner ")

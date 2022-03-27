@@ -1,5 +1,5 @@
 {
-  "name": "Honor Router 3/X3 tracker",
+  "name": "Huawei Router AX2 and AX2Pro tracker",
   "render_readme": "true",
   "domains": ["device_tracker"],
   "iot_class": ["Assumed State", "Local Polling"]

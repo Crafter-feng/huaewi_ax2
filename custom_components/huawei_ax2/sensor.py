@@ -1,4 +1,4 @@
-"""Sensor platform for HonorX3."""
+"""Sensor platform for HuaweiAX2."""
 from datetime import timedelta
 from homeassistant.helpers.entity import Entity
 from .const import DOMAIN, ICON
@@ -9,15 +9,15 @@ _LOGGER = logging.getLogger(__name__)
 
 async def async_setup_platform(hass, _config, async_add_entities, discovery_info=None):
     """Setup sensor platform."""
-    _LOGGER.debug("Adding HonorX3 entity")
-    async_add_entities([HonorX3Sensor(hass, discovery_info)])
+    _LOGGER.debug("Adding HuaweiAX2 entity")
+    async_add_entities([HuaweiAX2Sensor(hass, discovery_info)])
 
 
-class HonorX3Sensor(Entity):
-    """ HonorX3 Sensor class."""
+class HuaweiAX2Sensor(Entity):
+    """ HuaweiAX2 Sensor class."""
 
     def __init__(self, hass, config):
-        _LOGGER.debug(f"Initializing HonorX3Sensor entity: sensor.{__name__}")
+        _LOGGER.debug(f"Initializing HuaweiAX2Sensor entity: sensor.{__name__}")
         self.hass = hass
         self._attr = {}
         self._state = None
