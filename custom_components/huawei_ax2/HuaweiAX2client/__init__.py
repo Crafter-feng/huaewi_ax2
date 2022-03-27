@@ -1,4 +1,4 @@
-"""Honor X3 client"""
+"""Huawei Ax2 client"""
 
 __author__ = "Juan Pablo de Castro (juan.pablo.de.castro@gmail.com)"
 __version__ = "1.0.0"

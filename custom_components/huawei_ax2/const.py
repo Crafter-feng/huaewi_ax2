@@ -34,7 +34,7 @@ ICONS = {
 # CONF_SCAN_INTERVAL = "scan_interval"
 
 # Defaults
-DEFAULT_NAME = "Honor X3 router"
+DEFAULT_NAME = "Huawei Ax2 router"
 
 # Interval in seconds
 INTERVAL = 60

@@ -35,7 +35,7 @@ class HuaweiAX2DeviceScanner(DeviceScanner):
         :type cli: HuaweiAX2Client
         """
         _LOGGER.info("===========================")
-        _LOGGER.info(" Honor X3 start device Scanner ")
+        _LOGGER.info(" Huawei Ax2 start device Scanner ")
         _LOGGER.info("===========================")
         self.router_client = cli
         self.hass = hass

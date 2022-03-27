@@ -1,6 +1,6 @@
 {
   "domain": "huawei_ax2",
-  "name": "Honor 3/X3 Router",
+  "name": "huawei ax2/AX2Pro Router",
   "documentation": "https://github.com/Uniquemf/huaewi_ax2.git",
   "codeowners": ["@juacas"],
   "issue_tracker": "https://github.com/juacas/honor_x3/issues",

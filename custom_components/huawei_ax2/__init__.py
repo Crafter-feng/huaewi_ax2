@@ -1,4 +1,4 @@
-"""The honor 3 component."""
+"""The Huawei 3 component."""
 import logging
 from datetime import datetime
 
