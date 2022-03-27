@@ -1,9 +1,9 @@
 {
   "domain": "huawei_ax2",
   "name": "huawei ax2/AX2Pro Router",
-  "documentation": "https://github.com/Uniquemf/huaewi_ax2.git",
-  "codeowners": ["@juacas"],
-  "issue_tracker": "https://github.com/juacas/honor_x3/issues",
+  "documentation": "https://github.com/Uniquemf/huaewi_ax2/blob/master/README.md",
+  "codeowners": ["@juacas","@Uniquemf"],
+  "issue_tracker": "https://github.com/Uniquemf/huaewi_ax2",
   "version": "v1.0.6",
   "requirements": ["bs4", "pycryptodome>=3.9.9"],
   "iot_class": "local_polling"
